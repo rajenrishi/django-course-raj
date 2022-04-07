@@ -1,0 +1,16 @@
+<h1>{{ day }}</h1>
+
+<ul>
+    {% for device in object_list %}
+        <li>{{ device.device_make_date|date:"F j, Y" }}: {{ device.device_name }}</li>
+    {% endfor %}
+</ul>
+
+<p>
+    {% if previous_day %}
+        Previous Day: {{ previous_day }}
+    {% endif %}
+    {% if next_day %}
+        Next Day: {{ next_day }}
+    {% endif %}
+</p>

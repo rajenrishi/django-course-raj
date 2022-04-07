@@ -1,0 +1,9 @@
+<html>
+   <body>
+        {% for fruit in fruit_list %}
+            <div class="{% cycle 'row1' 'row2' 'row3' %}">
+                {{fruit}}
+            </div>
+        {% endfor %}
+   </body>
+</html>

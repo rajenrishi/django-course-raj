@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} FRUITS LIST {% endblock %}
+{% block content %}
+
+   {% for fruit in fruit_list %}
+       <li>{{ fruit }}</li>
+   {% endfor %}
+
+{% endblock %}

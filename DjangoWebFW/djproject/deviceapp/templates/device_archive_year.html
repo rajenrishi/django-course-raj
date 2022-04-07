@@ -1,0 +1,15 @@
+<ul>
+    {% for date in date_list %}
+        <li>{{ date|date }}</li>
+    {% endfor %}
+</ul>
+
+<div>
+    <h1> Previous year {{ previous_year|date:"Y" }}</h1>
+    <h1>All Devices for {{ year|date:"Y" }}</h1>
+    {% for obj in object_list %}
+        <p>
+            {{ obj.device_name }} - {{ obj.device_type }} - {{ obj.device_make_date|date:"F j, Y" }}
+        </p>
+    {% endfor %}
+</div>

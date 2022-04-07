@@ -1,0 +1,14 @@
+<ul>
+    {% for date in date_list %}
+        <li>{{ date|date }}</li>
+    {% endfor %}
+</ul>
+
+<div>
+    <h1>All Devices for {{ month|date:"F" }}</h1>
+    {% for obj in object_list %}
+        <p>
+            {{ obj.device_name }} - {{ obj.device_make_date|date:"F j, Y" }}
+        </p>
+    {% endfor %}
+</div>

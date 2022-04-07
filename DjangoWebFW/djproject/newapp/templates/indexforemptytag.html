@@ -1,0 +1,11 @@
+<html>
+   <body>
+      <ul>
+            {% for fruit in fruit_list %}
+                <li>{{ fruit }}</li>
+            {% empty %}
+                <li>Sorry, no fruits in this list.</li>
+            {% endfor %}
+      </ul>
+   </body>
+</html>
