@@ -1,0 +1,11 @@
+<html>
+   <body>
+      <h1> Session Details </h1>
+      <div> {{ cust_name }} </div>
+      <div> {{ cust_email }} </div>
+      <div> {{ request.session.get_session_cookie_age }} </div>
+      <div> {{ request.session.get_expiry_age }} </div>
+      <div> {{ request.session.get_expiry_date }} </div>
+      <div> {{ request.session.get_expire_at_browser_close }} </div>
+   </body>
+</html>

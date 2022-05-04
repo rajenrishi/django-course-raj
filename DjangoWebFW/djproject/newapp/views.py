@@ -38,6 +38,7 @@ def show_emp_details(request, empid, empname):
     text = "<h1>Employee {0} ID is {1}</h1>".format(empid, empname)
     return HttpResponse(text)
 
+
 def showdate(request, dmdate):
     print("dmdate>>>>>>>>>>>>>>>>>>>>>>", dmdate)
     print("dmdate>>>>>>>>>>>>>>>>>>>>>>", type(dmdate))

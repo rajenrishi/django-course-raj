@@ -17,10 +17,27 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 
-from newapp import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView,)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("o/", include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('newapp/', include('newapp.urls')),
     path('deviceapp/', include('deviceapp.urls')),
+    path('cacheapp/', include('cacheapp.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('restfw/', include('restfw.urls')),
+    path('restfwcbv/', include('restfwcbv.urls')),
+
+
+    path('api/token/get-token', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
